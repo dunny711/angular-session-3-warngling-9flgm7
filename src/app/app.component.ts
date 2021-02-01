@@ -94,12 +94,14 @@ export class AppComponent {
   lotteryThreshold = 2;
 
   anonymize() {
-    this.customerList.map(
-      (customer, i) => (customer.name = this.anonymizedNames[i])
-    );
+    //TODO use this function with this.customerList.map(...)
+    // this.customerList.map(
+    //   (customer, i) => (customer.name = this.anonymizedNames[i])
+    // );
   }
 
   groupByMoney() {
+    //TODO use this function to filter poor people >0
     this.customerList = this.customerList.filter(customer => {
       return customer.money > 0;
     });
