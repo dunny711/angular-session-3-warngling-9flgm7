@@ -26,12 +26,22 @@ The market department wants to identify critical clients, who have a lot of mone
 
 </div>
 <h3>Excercise 3: Reduce</h3>
-Due to an error by your side, all total sums are missing. Use the reduce operator <code>customer.qty.reduce(...) </code> to keep your job. 
+Due to an error by your side, all total sums are missing. Use the reduce operator <code>customer.qty.reduce(...) </code>
+to keep your job.
 <br>
 <button (click)="sumOfQuantity()"> Sum </button>
 <div *ngFor="let customer of customerList">
 	<code>{{customer.sum}}</code>
 </div>
+<h3>Bonus: Clean the Code!</h3>
+A person before you was working on the project beforehand, unfortunately he didnt take this seminar, so his code is a
+little bit messy. Your company wants to increase the rating of customers based the gaussiasn random function with a
+variance of your choosing.
+<button (click)="testFunction1()"> Sum </button>
+<div *ngFor="let customer of customerWithMoney">
+	<code>{{customer.rating}}</code>
+</div>
+
 <!-- Insert Answer for Exercise 1.1 -->
 <div class="exercise">
 
