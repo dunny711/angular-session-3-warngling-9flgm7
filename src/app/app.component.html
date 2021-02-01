@@ -1,0 +1,100 @@
+<h1>3 | Forms</h1>
+<!-- Section 1 -->
+
+<h2>Template-Driven Forms</h2>
+
+<!-- Exercise 1 -->
+<h3>Excercise 1</h3>
+<p>
+  In this example we want to create a simple template-driven form. For
+  registering for a new website. There is a few steps we need to undertake.
+</p>
+
+<ol>
+  <li>
+    Take a look at the <code>app.component.ts</code> you will find an interface
+    <code>User</code>, which contains all the data fields a newly registered
+    user might require. Its properties are the variables we want to set using
+    the form.
+  </li>
+  <li>
+    As we want to use forms in this exercise, the <code>FormsModule</code> needs
+    to be imported and injected into our app. Head over to the
+    <code>app.module.ts</code> and uncomment the necessary lines there.
+  </li>
+  <li>
+    The current inputs do not have types assigned to them. Assign the correct
+    <code>type="xxx"</code> to each input. Head over to
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"
+      >mozilla.org</a
+    >
+    to see which types are available.
+  </li>
+  <li>
+    In this form all input values except the name are mandatory. Mark all
+    mandatory inputs as such using the <code>required</code> attribute. If you
+    need to refresh your memory head over to
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required"
+      >mozilla.org</a
+    >
+  </li>
+
+  <li>
+    Each input of a template-driven form needs to be named. Assign the
+    <code>name="xxx"</code> property for each input.
+  </li>
+  <li>
+    Wrap all questions inside a <code>form</code> element. The
+    <code>form</code> element should recieve the attribute
+    <code>#signupForm="ngForm"</code>, which sets its <code>id</code> to
+    <code>#signupForm</code> and declarates it as an <code>ngForm</code>.
+  </li>
+  <li>
+    Remember the <code>user</code> we had a look at in in 1.? Use
+    two-way-data-binding with <code>[(ngModel)]</code> to bind the value of each
+    of the inputs to their respective property.
+  </li>
+  <li>
+    If you did everything right up to this point, the properties of
+    <code>user</code> should update, when you type something into an input and
+    you should be able to use <code ngNonBindable>{{signupForm.valid}}</code> to
+    show whether the form has been correctly filled in. You can uncomment the
+    respective line in the code.
+  </li>
+  <li>
+    To finish up, it would be great to be able to submit the form. The button is
+    already available. Make sure to mark it as the submission button by adding
+    the property <code>type=submit</code> to it. We also want to disable the
+    button, until the form is valid adding
+    <code>[disabled]="!signupForm.valid"</code> should do the trick. Now we only
+    need to let our <code>form</code> know what to do, when the submit button is
+    clicked by adding <code>(ngSubmit)="onSubmit()"</code> to its properties.
+  </li>
+</ol>
+
+<!-- Insert Answer for Exercise 1.1 -->
+<div class="exercise">
+  <b>Sign-Up</b>
+  <div>
+    <span>Name:</span>
+    <input />
+  </div>
+
+  <div>
+    <span>E-mail</span>
+    <input />
+  </div>
+
+  <div>
+    <span>Password</span>
+    <input />
+  </div>
+
+  <!-- Form is valid: {{signupForm.valid}} -->
+  <div>{{user | json}}</div>
+  <div>
+    <span></span>
+    <button>Submit form</button>
+  </div>
+</div>
