@@ -104,21 +104,19 @@ export class AppComponent {
     //ToDo use reduce and map on customerList to add the qty together and put them into the variable sum
   }
   testFunction1() {
-    // this.customerList = this.customerList.filter(customer => {
-    //   return customer.qty.length > this.lotteryThreshold;
-    // });
-    // this.customerWithMoney.map(
-    //   customer => (customer.rating = customer.rating * this.randomG(4))
-    // );
-    this.customerWithMoney.filter(customer => {});
-    console.log(this.customerList);
-
+    let richIds = [];
     for (var i = 0; i < this.customerList.length; i++) {
-      this.customerWithMoney.forEach(element => {
-        if (this.customerList[i].qty.length > this.lotteryThreshold) {
-          element.rating = element.rating * this.randomG(4);
+      if (this.customerList[i].qty.length > this.lotteryThreshold)
+        richIds.push(this.customerList[i].id);
+    }
+    console.log(richIds);
+    for (var i = 0; i < this.customerWithMoney.length; i++) {
+      for (var j = 0; j < richIds.length; j++) {
+        if (this.customerWithMoney[i].id == richIds[j]) {
+          this.customerWithMoney[i].rating =
+            this.customerWithMoney[i].rating * this.randomG(4);
         }
-      });
+      }
     }
   }
 
