@@ -104,17 +104,19 @@ export class AppComponent {
     //ToDo use reduce and map on customerList to add the qty together and put them into the variable sum
   }
   testFunction1() {
+    // YoYo if order over threshold, customer is rich
     let richIds = [];
     for (var i = 0; i < this.customerList.length; i++) {
       if (this.customerList[i].qty.length > this.lotteryThreshold)
         richIds.push(this.customerList[i].id);
     }
-    console.log(richIds);
+    // match with customerWithMoney and change rating accordingly
     for (var i = 0; i < this.customerWithMoney.length; i++) {
       for (var j = 0; j < richIds.length; j++) {
         if (this.customerWithMoney[i].id == richIds[j]) {
           this.customerWithMoney[i].rating =
-            this.customerWithMoney[i].rating * this.randomG(4);
+          //TODO use randomG here
+            this.customerWithMoney[i].rating * 2;
         }
       }
     }
