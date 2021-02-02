@@ -49,42 +49,42 @@ export class AppComponent {
   customerList = [
     {
       id: 1,
-      name: "Daniel Mustermann",
+      name: "Daniel Ballerina",
       money: -1000,
       qty: [0, 0, 0, 0, 0],
       sum: 0
     },
     {
       id: 2,
-      name: "Emil Mustermann",
+      name: "Emil Guru",
       money: 12,
       qty: [20, 50, 60],
       sum: 0
     },
     {
       id: 3,
-      name: "Bennet Mustermann",
+      name: "Bennet Jovi",
       money: 12,
       qty: [68, 9],
       sum: 0
     },
     {
       id: 4,
-      name: "Christoph Mustermann",
+      name: "Christoph Bachelor",
       money: 12,
       qty: [20, 50, 45, 10, 9],
       sum: 0
     },
     {
       id: 5,
-      name: "Christian Mustermann",
+      name: "Christian Cutie",
       money: 12,
       qty: [9],
       sum: 0
     },
     {
       id: 6,
-      name: "Jan Mustermann",
+      name: "Jan Designer",
       money: 12,
       qty: [0, 50, 60, 10, 9],
       sum: 0
@@ -95,25 +95,13 @@ export class AppComponent {
 
   anonymize() {
     //TODO use this function with this.customerList.map(...)
-    // this.customerList.map(
-    //   (customer, i) => (customer.name = this.anonymizedNames[i])
-    // );
   }
 
   groupByMoney() {
-    //TODO use this function to filter poor people >0
-    this.customerList = this.customerList.filter(customer => {
-      return customer.money > 0;
-    });
+    //Todo use filter on customerList to filter poor people out
   }
   sumOfQuantity() {
-    // this.customerList.map(customer => {
-    //   customer.sum = customer.qty.reduce(function (accumulator, currentValue, currentIndex, array) {
-    //     return accumulator + currentValue;
-    // })
-    this.customerList.map(customer => {
-      customer.sum = customer.qty.reduce((prev, curr) => prev + curr);
-    });
+    //ToDo use reduce and map on customerList to add the qty together and put them into the variable sum
   }
   testFunction1() {
     // this.customerList = this.customerList.filter(customer => {
@@ -134,6 +122,7 @@ export class AppComponent {
     }
   }
 
+  //some Gaussian function
   randomG(v: number) {
     var r = 0;
     for (var i = v; i > 0; i--) {
